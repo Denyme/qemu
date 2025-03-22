@@ -1,0 +1,14 @@
+# Настройки OVS
+ovs_bridge_name: "ovs-br0"  # Имя моста OVS
+ovs_network_cidr: "192.168.1.0/24"  # Сеть для DHCP
+ovs_gateway_ip: "192.168.1.1"  # IP-адрес шлюза
+
+# Настройки dnsmasq
+dnsmasq_dhcp_range_start: "192.168.1.100"  # Начало пула DHCP
+dnsmasq_dhcp_range_end: "192.168.1.200"  # Конец пула DHCP
+dnsmasq_dns_servers:
+  - "8.8.8.8"  # DNS-серверы
+  - "8.8.4.4"
+
+# Настройки NAT
+nat_external_interface: "eth0"  # Внешний интерфейс для NAT

@@ -1,0 +1,15 @@
+---
+- name: Include installation tasks
+  include_tasks: install.yml
+
+- name: Configure Open vSwitch
+  include_tasks: configure_ovs.yml
+
+- name: Configure dnsmasq for DHCP
+  include_tasks: configure_dnsmasq.yml
+
+- name: Configure iptables for NAT
+  include_tasks: configure_iptables.yml
+
+- name: Start and enable services
+  include_tasks: start_services.yml

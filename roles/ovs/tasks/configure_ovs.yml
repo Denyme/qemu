@@ -1,0 +1,13 @@
+---
+- name: Create OVS bridge
+  command: >
+    ovs-vsctl add-br {{ ovs_bridge_name }}
+  args:
+    creates: /etc/openvswitch/conf.db
+
+- name: Assign IP address to OVS bridge
+  shell: |
+    ip addr add {{ ovs_gateway_ip }}/24 dev {{ ovs_bridge_name }}
+    ip link set {{ ovs_bridge_name }} up
+  args:
+    executable: /bin/bash

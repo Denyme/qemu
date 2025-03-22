@@ -1,0 +1,8 @@
+---
+- name: Install Open vSwitch and dnsmasq
+  pacman:
+    name:
+      - openvswitch
+      - dnsmasq
+      - iptables-nft
+    state: present

@@ -1,0 +1,6 @@
+<network>
+  <name>ovs-network</name>
+  <forward mode="bridge"/>
+  <bridge name="br-qemu"/>
+  <virtualport type="openvswitch"/>
+</network>

@@ -1,0 +1,12 @@
+---
+- name: Enable and start Open vSwitch service
+  systemd:
+    name: openvswitch
+    enabled: yes
+    state: started
+
+- name: Enable and start dnsmasq service
+  systemd:
+    name: dnsmasq
+    enabled: yes
+    state: started

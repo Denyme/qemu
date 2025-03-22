@@ -1,0 +1,13 @@
+# DHCP range
+dhcp-range={{ dnsmasq_dhcp_range_start }},{{ dnsmasq_dhcp_range_end }},12h
+
+# Gateway
+dhcp-option=3,{{ ovs_gateway_ip }}
+
+# DNS servers
+{% for dns in dnsmasq_dns_servers %}
+server={{ dns }}
+{% endfor %}
+
+# Logging
+log-dhcp
